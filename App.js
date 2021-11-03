@@ -42,8 +42,9 @@ function AddInputScreen({navigation}) {
     const addOps = () => {
         setRes(() => rightOp + leftOp);
     };
-    useEffect(() => {
+    useEffect((props) => {
         addOps();
+
 
     });
     return (
@@ -70,6 +71,8 @@ function AddInputScreen({navigation}) {
             <Button onPress={() => {
                 addOps();
                 navigation.navigate('Results', {totl: res});
+                handleLeftOp(0);
+                handleRightOp(0);
             }} title="Add"/>
 
 
@@ -121,6 +124,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
         marginTop: 50,
         padding: 5,
+
 
     },
     plusSign: {
